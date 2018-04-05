@@ -10,7 +10,11 @@
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },
     "autoload-dev": {
-        "psr-4": { "Tests\\": "tests/" },
+        "psr-4": {
+            "WallOfQuotes\\Bundle\\": "src/WallOfQuotes/Bundle/",
+            "Tests\\": "tests/"
+        },
+        "classmap": ["app/AppKernel.php", "app/AppCache.php"],
         "files": [ "vendor/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php" ]
     },
     "require": {

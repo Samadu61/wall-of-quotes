@@ -1,0 +1,10 @@
+WallOfQuotes\Bundle\AppBundle\Entity\Quote:
+    type: entity
+    table: quotes
+    id:
+        id:
+            type: integer
+            generate: { strategy: auto }
+    fields:
+        text:
+            type: string
