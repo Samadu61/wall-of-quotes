@@ -1,0 +1,35 @@
+wallofquotes:
+    app_name: LeMurDesCitations
+    form:
+        author_choose: Choisir un auteur
+        connect: Se conneter
+        login: Identifiant
+        password: Mot de passe
+        password_confirmation: Confirmer le mot de passe
+        register: S'enregister
+        quote:
+            date: Date
+            quote: Citation
+            signedBy: Signé par
+        author:
+            author: Auteur
+            name: Nom
+    login:
+        login_page: Page de connexion
+        connect_to_app: Connexion à l'application
+    quotes:
+        add: Ajouter une citation
+        date: Date
+        quote: Citation
+        none: Aucune citation
+        update: Modifier une citation
+        signedBy: Signé par
+    authors:
+        author: Auteur
+    ui:
+        add: Ajouter
+        back: Retour
+        delete: Supprimer
+        home: Accueil
+        quotes: Citations
+        update: Modifier

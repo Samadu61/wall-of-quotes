@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="card">
+        {{ form_start(form) }}
+        <div class="card-header">
+            {{ 'wallofquotes.quotes.update'|trans }}
+        </div>
+        <div class="card-body">
+            {{ form_row(form.text, { 'label': 'wallofquotes.form.quote.quote'|trans, 'method': 'PUT' }) }}
+            {{ form_row(form.nickNameAuthor, { 'label': 'wallofquotes.form.quote.signedBy'|trans }) }}
+            {{ form_row(form.date) }}
+            {{ form_row(form.author) }}
+        </div>
+        <div class="card-footer">
+            <div class="float-right">
+                {{ form_row(form.save, {'attr': {'class': 'btn btn-sm btn-primary'} }) }}
+            </div>
+            <a href="{{ path('wallofquotes_quote_index') }}" class="btn btn-sm btn-danger">{{ 'wallofquotes.ui.back'|trans }}</a>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

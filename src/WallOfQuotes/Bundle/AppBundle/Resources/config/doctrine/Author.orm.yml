@@ -1,0 +1,23 @@
+WallOfQuotes\Bundle\AppBundle\Entity\Author:
+    type: entity
+    table: authors
+    repositoryClass: WallOfQuotes\Bundle\AppBundle\Doctrine\ORM\AuthorRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+        createdAt:
+            type: datetime
+            column: created_at
+        updatedAt:
+            type: datetime
+            column: updated_at
+    oneToMany:
+        quotes:
+            targetEntity: WallOfQuotes\Bundle\AppBundle\Entity\Quote
+            mappedBy: author

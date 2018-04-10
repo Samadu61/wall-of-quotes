@@ -1,3 +1,31 @@
-app_homepage:
+wallofquotes_app_home:
     path:     /
-    defaults: { _controller: AppBundle:Default:index }
+    defaults: { _controller: WallOfQuotesAppBundle:Default:index }
+
+wallofquotes_quote_index:
+    methods: ['GET']
+    path: /quotes
+    defaults:
+        _controller: WallOfQuotesAppBundle:Quote:index
+
+wallofquotes_quote_create:
+    methods: ['GET', 'POST']
+    path: /quotes/create
+    defaults:
+        _controller: WallOfQuotesAppBundle:Quote:add
+
+wallofquotes_quote_update:
+    methods: ['GET', 'PUT']
+    path: /quotes/{id}/edit
+    defaults:
+        _controller: WallOfQuotesAppBundle:Quote:update
+    requirements:
+        id: '\d+'
+
+wallofquotes_quote_delete:
+    methods: ['DELETE']
+    path: /quotes/{id}/delete
+    defaults:
+        _controller: WallOfQuotesAppBundle:Quote:delete
+    requirements:
+        id: '\d+'

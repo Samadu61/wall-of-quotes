@@ -1,3 +1,2 @@
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
+wallofquotes_app:
+    resource: '@WallOfQuotesAppBundle/Resources/config/routing.yml'

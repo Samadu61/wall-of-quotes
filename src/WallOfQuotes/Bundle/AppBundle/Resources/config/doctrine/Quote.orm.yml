@@ -1,10 +1,32 @@
 WallOfQuotes\Bundle\AppBundle\Entity\Quote:
     type: entity
     table: quotes
+    repositoryClass: WallOfQuotes\Bundle\AppBundle\Doctrine\ORM\QuoteRepository
     id:
         id:
             type: integer
-            generate: { strategy: auto }
+            id: true
+            generator:
+                strategy: AUTO
     fields:
         text:
             type: string
+        nickNameAuthor:
+            type: string
+            column: nickname_author
+        date:
+            type: date
+        createdAt:
+            type: datetime
+            column: created_at
+        updatedAt:
+            type: datetime
+            column: updated_at
+    manyToOne:
+        author:
+            targetEntity: WallOfQuotes\Bundle\AppBundle\Entity\Author
+            inversedBy: quotes
+            joinColumn:
+                name: author_id
+                referencedColumnName: id
+                onDelete: CASCADE
