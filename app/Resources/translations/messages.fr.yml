@@ -25,9 +25,14 @@ wallofquotes:
         update: Modifier une citation
         signedBy: Signé par
     authors:
+        add: Ajouter un auteur
         author: Auteur
+        number_of_quotes: Nombre de citations
+        update: Modifier un auteur
     ui:
         add: Ajouter
+        author: Auteur
+        authors: Auteurs
         back: Retour
         delete: Supprimer
         home: Accueil
