@@ -1,1 +1,17 @@
 @import "node_modules/bootstrap/scss/bootstrap";
+
+$header-height: 3em;
+$body-height: 100vh;
+$footer-height: 10em;
+
+body {
+  min-height: 100vh;
+}
+
+.flex-grow {
+  flex: 1;
+}
+
+header {
+  margin-bottom: $header-height;
+}

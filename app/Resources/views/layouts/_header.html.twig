@@ -1,17 +1,19 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="{{ path('wallofquotes_app_home') }}">{{ 'wallofquotes.app_name'|trans }}</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item {{ app.request.attributes.get('_route') == 'core_homepage' ? 'active' : '' }}">
+                <li class="nav-item {{ app.request.attributes.get('_route') == 'wallofquotes_app_home' ? 'active' : '' }}">
                     <a class="nav-link" href="{{ path('wallofquotes_app_home') }}">{{ 'wallofquotes.ui.home'|trans }}<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                <li class="nav-item {{ app.request.attributes.get('_route') == 'wallofquotes_quote_index' ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ path('wallofquotes_quote_index') }}">{{ 'wallofquotes.ui.quotes'|trans }}</a>
+                </li>
+                <li class="nav-item {{ app.request.attributes.get('_route') == 'wallofquotes_author_index' ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ path('wallofquotes_author_index') }}">{{ 'wallofquotes.ui.authors'|trans }}</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

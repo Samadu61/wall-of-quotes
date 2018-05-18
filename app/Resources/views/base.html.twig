@@ -7,17 +7,19 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
     </head>
-    <body>
+    <body class="d-flex flex-column">
     {% include "layouts/_header.html.twig" %}
-
-    <div class="container">
-
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    <div id="wrap" class="flex-grow">
+        <div id="content" class="container">
+            {% block body %}{% endblock %}
+        </div>
     </div>
 
     <script defer src="{{ asset('js/vendor.js') }}"></script>
     <script defer src="{{ asset('js/app.js') }}"></script>
     <script defer src="{{ asset('js/plugins.js') }}"></script>
+
+    {% block javascripts %}{% endblock %}
+
     </body>
 </html>
