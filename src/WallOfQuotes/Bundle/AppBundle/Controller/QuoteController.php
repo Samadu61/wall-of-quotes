@@ -3,11 +3,9 @@
 namespace WallOfQuotes\Bundle\AppBundle\Controller;
 
 use DateTime;
-use function Symfony\Bridge\Twig\Extension\twig_is_root_form;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Intl\DateFormatter\DateFormat\QuarterTransformer;
 use WallOfQuotes\Bundle\AppBundle\Entity\Quote;
 use WallOfQuotes\Bundle\AppBundle\Form\Type\QuoteType;
 
@@ -49,12 +47,10 @@ class QuoteController extends Controller
 
     public function updateAction(Request $request, int $id): Response
     {
-        $repository = $this->getDoctrine()->getRepository(Quote::class);
-        $quote = $repository->find($id);
+        $quoteRepository = $this->getDoctrine()->getRepository(Quote::class);
+        $quote = $quoteRepository->find($id);
 
-        $form = $this->createForm(QuoteType::class, $quote, [
-            'method' => 'PUT'
-        ]);
+        $form = $this->createForm(QuoteType::class, $quote, ['method' => 'PUT']);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -72,7 +68,7 @@ class QuoteController extends Controller
         ]);
     }
 
-    public function deleteAction(Request $request, int $id): Response
+    public function deleteAction(int $id): Response
     {
         $repository = $this->getDoctrine()->getRepository(Quote::class);
 
