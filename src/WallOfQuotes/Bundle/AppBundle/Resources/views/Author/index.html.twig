@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ 'wallofquotes.ui.authors'|trans }} {% endblock %}
+
+{% block body %}
+    <div class="card">
+        <div class="card-header">
+            {{ 'wallofquotes.ui.authors'|trans }}
+            <div class="float-right">
+                <a href="{{ path('wallofquotes_author_create') }}" class="btn btn-sm btn-success">{{ 'wallofquotes.authors.add'|trans }}</a>
+            </div>
+        </div>
+        <div class="card-body">
+            {% if authors|length is not same as(0) %}
+                <table class="table table-striped table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col">{{ 'wallofquotes.authors.author'|trans }}</th>
+                        <th scope="col">{{ 'wallofquotes.authors.number_of_quotes'|trans }}</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for author in authors %}
+                        <tr>
+                            <td>{{ author.name }}</td>
+                            <td>{{ author.quotes.count }}</td>
+                            <td class="d-flex flex-row">
+                                <a href="{{ path('wallofquotes_author_update', {'id': author.id}) }}" class="btn btn-sm btn-primary mr-1">{{ 'wallofquotes.ui.update'|trans }}</a>
+                                <form method="POST" action="{{ path('wallofquotes_author_delete', {'id': author.id}) }}">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="btn btn-sm btn-danger">{{ 'wallofquotes.ui.delete'|trans }}</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

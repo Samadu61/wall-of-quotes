@@ -29,3 +29,31 @@ wallofquotes_quote_delete:
         _controller: WallOfQuotesAppBundle:Quote:delete
     requirements:
         id: '\d+'
+
+wallofquotes_author_index:
+    methods: ['GET']
+    path: /authors
+    defaults:
+        _controller: WallOfQuotesAppBundle:Author:index
+
+wallofquotes_author_create:
+    methods: ['GET', 'POST']
+    path: /authors/create
+    defaults:
+        _controller: WallOfQuotesAppBundle:Author:add
+
+wallofquotes_author_update:
+    methods: ['GET', 'PUT']
+    path: /authors/{id}/edit
+    defaults:
+        _controller: WallOfQuotesAppBundle:Author:update
+    requirements:
+        id: '\d+'
+
+wallofquotes_author_delete:
+    methods: ['DELETE']
+    path: /authors/{id}/delete
+    defaults:
+        _controller: WallOfQuotesAppBundle:Author:delete
+    requirements:
+        id: '\d+'
