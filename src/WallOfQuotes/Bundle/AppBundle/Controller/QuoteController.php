@@ -37,6 +37,8 @@ class QuoteController extends Controller
             $em->persist($quote);
             $em->flush();
 
+            $this->get('session')->getFlashBag()->add('success', $this->get('translator')->trans('wallofquotes.form.quote.success_add'));
+
             return $this->redirectToRoute('wallofquotes_quote_index');
         }
 
@@ -60,6 +62,7 @@ class QuoteController extends Controller
             $em->persist($quote);
             $em->flush();
 
+            $this->get('session')->getFlashBag()->add('success', $this->get('translator')->trans('wallofquotes.form.quote.success_update'));
             return $this->redirectToRoute('wallofquotes_quote_index');
         }
 
@@ -78,6 +81,8 @@ class QuoteController extends Controller
 
             $em->remove($quote);
             $em->flush();
+
+            $this->get('session')->getFlashBag()->add('success', $this->get('translator')->trans('wallofquotes.form.quote.success_delete'));
         }
 
         return $this->redirectToRoute('wallofquotes_quote_index');

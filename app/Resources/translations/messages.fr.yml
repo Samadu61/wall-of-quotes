@@ -11,9 +11,15 @@ wallofquotes:
             date: Date
             quote: Citation
             signedBy: Signé par
+            success_add: La citation a bien été ajoutée
+            success_delete: La citation a bien été supprimée
+            success_update: La citation a bien été modifiée
         author:
             author: Auteur
             name: Nom
+            success_add: L'auteur a bien été ajouté
+            success_delete: L'auteur a bien été supprimé
+            success_update: L'auteur a bien été modifié
     login:
         login_page: Page de connexion
         connect_to_app: Connexion à l'application

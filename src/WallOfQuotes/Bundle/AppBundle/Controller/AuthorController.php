@@ -37,6 +37,8 @@ class AuthorController extends Controller
             $em->persist($author);
             $em->flush();
 
+            $this->get('session')->getFlashBag()->add('success', $this->get('translator')->trans('wallofquotes.form.author.success_add'));
+
             return $this->redirectToRoute('wallofquotes_author_index');
         }
 
@@ -60,6 +62,8 @@ class AuthorController extends Controller
             $em->persist($author);
             $em->flush();
 
+            $this->get('session')->getFlashBag()->add('success', $this->get('translator')->trans('wallofquotes.form.author.success_update'));
+
             return $this->redirectToRoute('wallofquotes_author_index');
         }
 
@@ -78,6 +82,8 @@ class AuthorController extends Controller
 
             $em->remove($author);
             $em->flush();
+
+            $this->get('session')->getFlashBag()->add('success', $this->get('translator')->trans('wallofquotes.form.author.success_delete'));
         }
 
         return $this->redirectToRoute('wallofquotes_author_index');
